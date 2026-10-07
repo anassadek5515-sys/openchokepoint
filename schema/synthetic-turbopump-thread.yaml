@@ -1,0 +1,29 @@
+schema_version: "0.2"
+title: "مخطط تسجيل الخيوط الرقمية والعناصر الحرجة لمضخات التوربينات الصاروخية"
+description: "تصميم رقمي لتتبع المواد الخام، العمليات، ومخططات EvidenceRecord الخاصة بمضخات التوربينات."
+
+entities:
+  - id: "TurbopumpInstance"
+    instance_of: "MaterialClass"
+    made_from: "RawMaterials"
+    underwent: "ProcessStep"
+    evidenced_by: "EvidenceRecord"
+    criticality: "High"
+
+relations:
+  - from: "TurbopumpInstance"
+    to: "MaterialClass"
+    type: "instance_of"
+  - from: "TurbopumpInstance"
+    to: "RawMaterials"
+    type: "made_from"
+  - from: "TurbopumpInstance"
+    to: "ProcessStep"
+    type: "underwent"
+  - from: "TurbopumpInstance"
+    to: "EvidenceRecord"
+    type: "evidenced_by"
+  - from: "TurbopumpInstance"
+    to: "Criticality"
+    type: "alternate_for"
+
